@@ -1,19 +1,21 @@
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-
-#include <doctest/doctest.h>
+#include <cstdio>
 #include "sort.hpp"
 
-TEST_CASE("Testing Unsortd Vectors"){
-
-
+void printArray(int arr[], int size){
+	for (int i=0;i<size; i++){
+		printf("%d, ", arr[i]);
+	}
+	printf("\n");
 }
 
-TEST_CASE("Testing sortd Vectors"){
+int main() {
 
+	int arr[] = {4,2,3,1,0,5,10};
 
-}
+	int n = sizeof(arr)/sizeof(arr[0]);
 
-TEST_CASE("Testing Arrays"){
-
-
+	quicksort(arr,0,n-1);
+	printf("Sorted array: \n");
+	printArray(arr,n);
+	return 0; 
 }
