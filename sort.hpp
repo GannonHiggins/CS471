@@ -1,19 +1,33 @@
 /*
 Functions to sort Vectors of Integers
 
-
 Precondition:
 A =  MUST be a Vector of Integers
 lo = Mst be a Value lower than the hi value of the hi value and must be greater than zero 
 hi = Must be a values higher than lo and be greater than zero 
 */
 
-void Quicksort(){
+void Quicksort(int arr[], int lo, int hi){
+	if(lo < hi){
+		int pi = partition(arr,lo,hi);
 
+		quicksort(arr,lo,pi - 1);
+		quicksort(arr, pi + 1, hi);
+	}
 }
 
 
-void partition(){
+int partition(int arr[], int lo, int hi){
 
+	int pivot = arr[hi];
 
+	int i = (low -1);
+
+	for(int j = lo; j <= hi - 1; j++){
+		if(arr[j] <= pivot){
+			i++;
+			swap(arr[i], arr[j]);
+		}
+	}
+	return i;
 }
