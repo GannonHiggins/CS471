@@ -1,3 +1,5 @@
+#include <algorithm>
+
 /*
 Functions to sort Vectors of Integers
 
@@ -7,8 +9,9 @@ lo = Mst be a Value lower than the hi value of the hi value and must be greater 
 hi = Must be a values higher than lo and be greater than zero 
 */
 
-void Quicksort(int arr[], int lo, int hi){
+void quicksort(int arr[], int lo, int hi){
 	if(lo < hi){
+
 		int pi = partition(arr,lo,hi);
 
 		quicksort(arr,lo,pi - 1);
@@ -21,12 +24,12 @@ int partition(int arr[], int lo, int hi){
 
 	int pivot = arr[hi];
 
-	int i = (low -1);
+	int i = (lo -1);
 
 	for(int j = lo; j <= hi - 1; j++){
 		if(arr[j] <= pivot){
 			i++;
-			swap(arr[i], arr[j]);
+			std::swap(arr[i], arr[j]);
 		}
 	}
 	return i;
