@@ -1,4 +1,5 @@
 #include <cstdio>
+#include "doctest.h"
 #include "sort.hpp"
 
 void printArray(int arr[], int size){
