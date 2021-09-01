@@ -1,3 +1,7 @@
+//Gannon Higgins
+//CS471 Assignment 1
+//8/30/2012
+
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <cstdio>
 #include "doctest.h"
@@ -30,11 +34,6 @@ bool CheckSorted(int arr[],int n){
 	return true;
 }
 
-void print_array(int arr[],int n){
-	for(int i=0; i < n; i++){
-		std::cout<<arr[i]<< " ";
-	}
-}
 
 TEST_CASE("Unsorted arrays"){
 
@@ -57,7 +56,7 @@ TEST_CASE("Unsorted arrays"){
 
 }
 
-TEST_CASE("Sorted Array"){
+TEST_CASE("Sorted Arrays"){
 	int arr[]= {1,2,3,4,5,6};
 	quicksort(arr,1,6);
 
