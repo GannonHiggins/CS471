@@ -1,6 +1,8 @@
 # CS471
 Homework for CS471 Class
 
+For Assignment 1:
+
 To compile on Linux use the commands:  
 > gcc test.cpp  
 > ./a.out  
