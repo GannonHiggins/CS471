@@ -10,12 +10,6 @@
 int size_int = sizeof(int); // Size of int value, ued to calculate the size of arrays
 
 /* 
-This function cheack each element at position n-1 and makes sure it is smaller than 
-position n. 
-returns True if all elements at position n-1 are smaller than n
-returns false if otherwise. 
-
-
 Preconditions: 
 	Arrays must contain only elements of type Int.
 	n must be equal to the size of the array.

@@ -10,14 +10,16 @@
 function to sort the array using the Lomuto partiton Scheme
 
 Preconditions:
-Array bust have at least 1 element and contain only integer values.
-lo must be equal to zero.
-hi must be the last element of the array.
+	Array bust have at least 1 element and contain only integer values.
+
+	lo must be equal to zero.
+
+	hi must be the last element of the array.
 
 
 postconditions:
-Functions will that the array and sort 
-the values from least to greatest. 
+	Function will take the array and sort 
+	the values from least to greatest. 
 
 */
 
