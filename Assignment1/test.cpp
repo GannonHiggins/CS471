@@ -17,8 +17,13 @@ returns false if otherwise.
 
 
 Preconditions: 
-	Arrays must be of Ints and must cuntain at least 1 values within the array
-	second value must be the Size of the array.
+	Arrays must contain only elements of type Int.
+	n must be equal to the size of the array.
+
+
+Postcondition: 
+	Function will check each element of the array 
+	and make sure that it is ordered from least to greatest value
 */
 bool CheckSorted(int arr[],int n){
 
@@ -33,7 +38,6 @@ bool CheckSorted(int arr[],int n){
 	}
 	return true;
 }
-
 
 TEST_CASE("Unsorted arrays"){
 
@@ -58,13 +62,13 @@ TEST_CASE("Unsorted arrays"){
 
 TEST_CASE("Sorted Arrays"){
 	int arr[]= {1,2,3,4,5,6};
-	quicksort(arr,1,6);
+	quicksort(arr,0,sizeof(arr)/size_int);
 
 	int arr1[] = {10,50,60,70,80,90};
 	quicksort(arr1,0,sizeof(arr1)/size_int);
 
 	int arr2[] = {0,10,88,99,100};
-	quicksort(arr2,10,sizeof(arr2)/size_int);
+	quicksort(arr2,0,sizeof(arr2)/size_int);
 
 
 
@@ -92,4 +96,23 @@ TEST_CASE("Arrays of size 1"){
 	CHECK(CheckSorted(arr2,sizeof(arr)/size_int) == true);
 	CHECK(CheckSorted(arr3,sizeof(arr)/size_int) == true);
 
+}
+
+TEST_CASE("Arrays that contain negative Values"){
+
+	int arr[] = {3,5,-4,6,7,-1};
+	int n = sizeof(arr)/size_int;
+	quicksort(arr,0,n-1);
+
+	int arr1[] = {3,8,-9,2,4};
+	int n1 = sizeof(arr1)/size_int;
+	quicksort(arr1,0,n1-1);
+
+	int arr2[] = {-3,-8,-9,-2,-4,-10};
+	int n2 = sizeof(arr2)/size_int;
+	quicksort(arr2,0,n2-1);
+
+	CHECK(CheckSorted(arr,n) == true);
+	CHECK(CheckSorted(arr1,n1) == true);
+	CHECK(CheckSorted(arr2,n2) == true);
 }

@@ -8,10 +8,16 @@
 /* 
 
 function to sort the array using the Lomuto partiton Scheme
+
 Preconditions:
 Array bust have at least 1 element and contain only integer values.
-lo must be the first element of the array.
+lo must be equal to zero.
 hi must be the last element of the array.
+
+
+postconditions:
+Functions will that the array and sort 
+the values from least to greatest. 
 
 */
 
@@ -19,7 +25,7 @@ int partition(int arr[], int lo, int hi){
 
 	int pivot = arr[hi];
 
-	int i = (lo -1);
+	int i = (lo - 1);
 
 	for(int j = lo; j <= hi - 1; j++){
 		if(arr[j] <= pivot){
